@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,39 +38,44 @@
   <script src="vistas/dist/js/demo.js"></script>
 </head>
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 <!-- Site wrapper -->
 
 
   <!-- =============================================== -->
     <?php
 
-      echo '<div class="wrapper">';
+      if(isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] = "ok"){
 
-      include "modulos/cabezote.php";
-      include "modulos/menu.php";
+        echo '<div class="wrapper">';
 
-      if(isset($_GET["ruta"])){
-        if($_GET["ruta"] == "inicio" ||
-          $_GET["ruta"] == "usuarios" ||
-          $_GET["ruta"] == "buses" ||
-          $_GET["ruta"] == "destinos" ||
-          $_GET["ruta"] == "reservas" ){
+        include "modulos/cabezote.php";
+        include "modulos/menu.php";
 
-          include "modulos/".$_GET["ruta"].".php";
-        } else{
-          include "modulos/404.php";
+        if(isset($_GET["ruta"])){
+          if($_GET["ruta"] == "inicio" ||
+            $_GET["ruta"] == "usuarios" ||
+            $_GET["ruta"] == "buses" ||
+            $_GET["ruta"] == "destinos" ||
+            $_GET["ruta"] == "reservas" ||
+            $_GET["ruta"] == "salir" ){
+
+            include "modulos/".$_GET["ruta"].".php";
+          } else{
+            include "modulos/404.php";
+          }
+        }else{
+          include "modulos/inicio.php";
         }
+        /*
+        include "modulos/inicio.php";*/
+        
+        include "modulos/pie.php";  
+        
+        echo '</div>';
       } else{
-        include "modulos/inicio.php";
+        include "principal.php";
       }
-      /*
-      include "modulos/inicio.php";*/
-      
-      include "modulos/pie.php";  
-      
-      echo '</div>';
-
     ?>
   <!-- =============================================== -->
 

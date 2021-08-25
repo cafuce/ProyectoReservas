@@ -164,7 +164,7 @@
                                     <td>destino</td>
                                     <td>
                                         <div class="btn-group">
-                                            <button class="btn btn-warning"><i class="fa fa-pencil">Reservar</i></button>
+                                            <button class="btn btn-warning"><i class="fa fa-pencil"> Reservar</i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -346,8 +346,8 @@
                     <h2 class="tm-text-light"><font color="black">INICIAR SESIÓN</h2>
                     <input
                       type="text"
-                      id="contact_name"
-                      name="contact_name"
+                      id="ingUsuario"
+                      name="ingUsuario"
                       class="form-control"
                       placeholder="Ingrese su Usuario"
                       required
@@ -355,9 +355,9 @@
                   </div>
                   <div class="form-group mb-4">
                     <input
-                      type="email"
-                      id="contact_email"
-                      name="contact_email"
+                      type="password"
+                      id="ingPassword"
+                      name="ingPassword"
                       class="form-control"
                       placeholder="Ingrese su Contraseña"
                       required
@@ -369,6 +369,10 @@
                       INGRESAR
                     </button>
                   </div>
+                  <?php 
+                      $login =new ControladorUsuarios();
+                      $login -> ctrIngresoUsuarios(); 
+                  ?>
                 </form>
               </section>
             </div>
