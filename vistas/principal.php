@@ -65,7 +65,7 @@
               <!-- Seccion  Introduccion -->
               <section class="tm-section tm-section-0">
                 <h2 class="tm-section-title mb-3 font-weight-bold">
-                  Reserva tu pasaje Online
+                  <font color="yellow">Reserva tu pasaje Online</font>
                 </h2>
                 <div class="tm-textbox tm-bg-dark">
                   
@@ -73,18 +73,58 @@
                   <div class="box">
                     <div class="box-body">
 
-                      <form>                          
-                        <label for="start">Fecha Inicio:</label>
+                      <form>  
+                        
+                      <table class = "table table-borderer table-striped" width="550" cellspacing="0" cellpadding="2">
+                            <thead>
+                                <tr>
+                                    <td align="middle"></td>
+                                </tr>
+                            </thead>
 
-                        <input type="date" id="inico" name="trip-inicio"
-                               value="2021-08-01"
-                               min="2021-08-01" max="2021-08-31"> <br>
-
-                        <label for="start">Fecha Final : </label>
-
-                        <input type="date" id="fin" name="trip-fin"
-                               value="2021-08-31"
-                               min="2021-08-01" max="2021-08-31"> <br>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                      <label for="start">Fecha Inicio:</label>
+                                    </td>
+                                    <td>
+                                      <input type="date" id="inico" name="trip-inicio"
+                                      value="2021-08-01"
+                                      min="2021-08-01" max="2021-08-31"> <br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <label for="start">Fecha Final : </label>
+                                    </td>
+                                    <td>
+                                      <input type="date" id="fin" name="trip-fin"
+                                      value="2021-08-31"
+                                      min="2021-08-01" max="2021-08-31"> <br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <label for="start">Destino : </label>
+                                    </td>
+                                    <td>
+                                      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <option selected>Selecciona destino</option>
+                                        <option value="1">Oruro</option>
+                                        <option value="2">La Paz</option>
+                                        <option value="3">Cochabamba</option>
+                                      </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td valign="left">
+                                    <input type="hidden" id="form_sent" name="form_sent" value="true"><br/>
+                                    <input type="submit" id="btn_submit" class = "btn btn-primary"value="Buscar viaje"><br/>
+                                  </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                         <script>    
                           export default {
@@ -108,16 +148,6 @@
                             }
                           }
                         </script> 
-
-                          Destino:
-                          <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                              <option selected>Selecciona destino</option>
-                              <option value="1">Oruro</option>
-                              <option value="2">La Paz</option>
-                              <option value="3">Cochabamba</option>
-                            </select>
-                          <input type="hidden" id="form_sent" name="form_sent" value="true"><br/>
-                          <input type="submit" id="btn_submit" class = "btn btn-primary"value="Buscar viaje"><br/>              
                       </form>
 
                         <hr>
